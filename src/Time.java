@@ -1,5 +1,3 @@
-import com.sun.deploy.util.StringUtils;
-
 public class Time {
 
     /**
