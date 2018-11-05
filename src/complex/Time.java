@@ -1,3 +1,5 @@
+package complex;
+
 public class Time {
 
     /**
@@ -30,7 +32,7 @@ public class Time {
         public int getSecond() {return second;}
 
         public long toSeconds() {
-            return (getHour() * 60 + getMinute())*60+getSecond();
+            return (getHour() * 60 + getMinute()) * 60 + getSecond();
         }
     }
 
