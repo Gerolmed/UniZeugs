@@ -8,7 +8,7 @@ public class Time {
      * @param compare End time
      * @return - seconds
      */
-    public long calculateTimeDiff(ClockTime origin, ClockTime compare) {
+    private long calculateTimeDiff(ClockTime origin, ClockTime compare) {
         long rawOrigin;
         long rawCompare;
 
@@ -21,17 +21,17 @@ public class Time {
     private static class ClockTime {
         private int hour, minute, second;
 
-        public ClockTime(int hour, int minute, int second) {
+        ClockTime(int hour, int minute, int second) {
             this.hour = hour;
             this.minute = minute;
             this.second = second;
         }
 
-        public int getHour() {return hour;}
-        public int getMinute() {return minute;}
-        public int getSecond() {return second;}
+        int getHour() {return hour;}
+        int getMinute() {return minute;}
+        int getSecond() {return second;}
 
-        public long toSeconds() {
+        long toSeconds() {
             return (getHour() * 60 + getMinute()) * 60 + getSecond();
         }
     }
