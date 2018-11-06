@@ -1,6 +1,10 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Other than its name might suggest, not the computer, but the human has to guess the number.
+ * Through various scientifically approved tests we discovered that you can find any number with at least 7 tries :)
+ */
 public class GuessNumber {
 
     /**
@@ -10,21 +14,21 @@ public class GuessNumber {
      * @param to - end value (inclusive)
      * @return - the random number
      */
-    public int generateNumber(int seed, int from, int to) {
+    private int generateNumber(int seed, int from, int to) {
         return new Random(seed).nextInt(to) + from;
     }
 
     public static void main(String[] args){
 
         //Generate a random integer between 1 (inclusive) and 100 (inclusive).
-        int magicNumber = 10; new GuessNumber().generateNumber(1, 1, 100);
+        int magicNumber = new GuessNumber().generateNumber(1, 1, 100);
         System.out.println("I am thinking about a Number. Can you guess which one it is?");
 
         //Let us get ready to await the input
         Scanner input = new Scanner(System.in);
 
         //Lets go and make da user input things
-        int userInput = -333333333;
+        int userInput = -333333333; //Illuminati confirmed!!
         boolean started = false;
 
         do {
