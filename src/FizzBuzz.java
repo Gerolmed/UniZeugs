@@ -5,7 +5,7 @@
  * Family Game Award 2020.
  * "So much fun" - nobody
  * "10/10" - GameStar
- * "No my live seems boring compared to this game" - still nobody
+ * "Now my live seems boring compared to this game" - still nobody
  */
 public class FizzBuzz {
 
