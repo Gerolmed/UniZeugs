@@ -40,6 +40,8 @@ public class GuessNumber {
 
         } while (userInput != magicNumber);
 
+        //That's right... no final output :( Screw u praktomat!
+
     }
 
 }
