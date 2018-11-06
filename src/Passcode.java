@@ -21,7 +21,7 @@ public class Passcode {
             triesRemaining--;
         }
 
-        public boolean islockedOut() {
+        public boolean isLockedOut() {
             return triesRemaining <= 0;
         }
 
@@ -40,7 +40,7 @@ public class Passcode {
 
         System.out.println("Please insert Passcode:");
 
-        while (!lock.islockedOut() && !lock.tryAccess(scanner.nextInt()) && !lock.islockedOut()) {
+        while (!lock.isLockedOut() && !lock.tryAccess(scanner.nextInt()) && !lock.isLockedOut()) {
 
             System.out.printf("Access denied! You have %s tries left.\n", lock.getTriesRemaining()+"");
             System.out.println("Please insert Passcode:");
