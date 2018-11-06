@@ -1,5 +1,3 @@
-package complex;
-
 public class Time {
 
     /**
