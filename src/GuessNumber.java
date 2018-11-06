@@ -44,7 +44,7 @@ public class GuessNumber {
 
         } while (userInput != magicNumber);
 
-        //That's right... no final output :( Screw u praktomat!
+        System.out.println("You got it! The Number I was thinking about is: "+magicNumber+".");
 
     }
 
