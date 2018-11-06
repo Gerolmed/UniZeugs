@@ -25,13 +25,16 @@ public class GuessNumber {
 
         //Lets go and make da user input things
         int userInput = -333333333;
+        boolean started = false;
 
         do {
-            if(userInput != -333333333)
+            if(started)
                 if(userInput < magicNumber)
                     System.out.println("This is not the Number I was thinking about. It is bigger. Try again!");
                 else
                     System.out.println("This is not the Number I was thinking about. It is smaller. Try again!");
+            else
+                started = true;
 
             userInput = input.nextInt();
 
