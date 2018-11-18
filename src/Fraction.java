@@ -1,8 +1,8 @@
 public class Fraction {
-    int numerator, denominator;
+    public int numerator, denominator;//Should be kept private
 
     public float toDecimal() {
-        return numerator/denominator;
+        return numerator/(float)denominator;
     }
 
     public Fraction inverse() {
@@ -26,8 +26,11 @@ public class Fraction {
     public Fraction add(Fraction fr) {
         Fraction fraction = new Fraction();
 
-        fraction.numerator = this.numerator + fr.numerator;
-        fraction.denominator = this.denominator + fr.denominator;
+        int smallestNewDenominator = MathHelper.lcm(this.denominator, fr.denominator);
+
+        fraction.numerator = this.numerator * (smallestNewDenominator/this.denominator)
+                + fr.numerator * (smallestNewDenominator/fr.denominator);
+        fraction.denominator = smallestNewDenominator;
 
         return fraction;
     }
@@ -35,12 +38,14 @@ public class Fraction {
     public Fraction subtract(Fraction fr) {
         Fraction fraction = new Fraction();
 
-        fraction.numerator = this.numerator - fr.numerator;
-        fraction.denominator = this.denominator - fr.denominator;
+        int smallestNewDenominator = MathHelper.lcm(this.denominator, fr.denominator);
+
+        fraction.numerator = this.numerator * (smallestNewDenominator/this.denominator)
+                + fr.numerator * (smallestNewDenominator/fr.denominator);
+        fraction.denominator = smallestNewDenominator;
 
         return fraction;
     }
-
 
     public Fraction divide(Fraction fr) {
         return multiply(fr.inverse());
