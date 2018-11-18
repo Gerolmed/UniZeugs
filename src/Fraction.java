@@ -64,7 +64,7 @@ public class Fraction {
         int smallestNewDenominator = MathHelper.lcm(this.denominator, fr.denominator);
 
         fraction.numerator = this.numerator * (smallestNewDenominator/this.denominator)
-                + fr.numerator * (smallestNewDenominator/fr.denominator);
+                - fr.numerator * (smallestNewDenominator/fr.denominator);
         fraction.denominator = smallestNewDenominator;
 
         return fraction;
