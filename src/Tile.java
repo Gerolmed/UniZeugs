@@ -32,6 +32,6 @@ public class Tile {
     }
 
     public String getValuesToString() {
-        return "Tile " + getLetter() + " has the value " + getValue() + ".";
+        return "Tile " + getLetter() + " has the value " + getValue();
     }
 }
