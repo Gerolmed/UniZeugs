@@ -6,7 +6,7 @@ public class Product {
     private final int PRODUCT_NUMBER;
 
     private double priceBuy, priceSell;
-    private int stock;
+    public int stock;
 
     public Product(String NAME, int PRODUCT_NUMBER, double priceBuy, double priceSell, int stock) {
         this.NAME = NAME;
