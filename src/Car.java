@@ -9,8 +9,8 @@ public class Car {
     }
 
     public Car(int seats) {
-        this("R-UR 18", seats);
-    }
+        this("R-UR 16", seats);
+    } //Well actually there should be an 8 here.
 
     public Car(String licensePlate, int seats) {
         this.licensePlate = licensePlate;
@@ -72,6 +72,6 @@ public class Car {
         return "Dat brumm brumm hat ne numma: " + getLicensePlate() +
                 " Da koennen bis zu "+ getSeats() + " Leudes zusammen fahren." +
                 " By the way, die Antenne iz " + isAntennaOut() +
-                " Kaud die Karre nich, sie ist schon " + getMileage() + " Meilen gefahren.";
+                " Kauf die Karre nich, sie ist schon " + getMileage() + " Meilen gefahren.";
     }
 }
