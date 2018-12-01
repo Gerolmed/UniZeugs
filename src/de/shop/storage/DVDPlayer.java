@@ -11,9 +11,9 @@ public class DVDPlayer extends Product{
         this.blueRay = blueRay;
     }
 
-    public DVDPlayer(String NAME, int PRODUCT_NUMBER, double priceBuy, double priceSell, String currentDVD, boolean blueRay) {
+    public DVDPlayer(String NAME, int PRODUCT_NUMBER, double priceBuy, double priceSell, boolean blueRay) {
         super(NAME, PRODUCT_NUMBER, priceBuy, priceSell);
-        this.currentDVD = currentDVD;
+        this.currentDVD = "";
         this.blueRay = blueRay;
     }
 

@@ -1,5 +1,7 @@
 package de.shop.storage;
 
+import java.text.DecimalFormat;
+
 public class Product {
 
     public final String NAME;
@@ -48,11 +50,11 @@ public class Product {
 
         Product pr = (Product) obj;
 
-        return pr.NAME.equals(this.NAME);
+        return pr.PRODUCT_NUMBER == this.PRODUCT_NUMBER;
     }
 
     @Override
     public String toString() {
-        return "A "+NAME+" costs $"+getPriceBuy()+". There are "+stock+" left in storage.";
+        return NAME+" costs $"+new DecimalFormat("#.00").format(getPriceSell())+". There are "+stock+" left in storage.";
     }
 }

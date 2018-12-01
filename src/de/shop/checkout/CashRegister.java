@@ -2,7 +2,10 @@ package de.shop.checkout;
 
 import de.shop.storage.Product;
 
+import java.text.DecimalFormat;
+
 public class CashRegister {
+
     private double cash;
     private static int customers;
 
@@ -21,27 +24,27 @@ public class CashRegister {
         return customers;
     }
 
-    public void sell(int amount, Product product) {
-        customers++;
+    public void sell(Product product, int amount) {
         product.stock -= amount;
         cash += amount * product.getPriceSell();
+        customers++;
 
     }
 
-    public double orderNewProduct(int amount, Product product) {
-        double price = amount * product.getPriceSell();
+    public void orderNewProduct(Product product, int amount) {
+        double price = amount * product.getPriceBuy();
 
         if(price > cash)
-            return cash;
+            return;
 
         product.stock += amount;
-        cash -= amount * product.getPriceSell();
+        cash = cash - amount * product.getPriceBuy();
 
-        return cash;
+        return;
     }
 
     @Override
     public String toString() {
-        return "Amount of cash: $"+cash+". Today there were "+customers+" customers at the Cash-Register.";
+        return "Amount of cash: $"+new DecimalFormat("#.00").format(getCash()) +". Today there were "+customers+" customers at the Cash-Register.";
     }
 }
