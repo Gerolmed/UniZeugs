@@ -39,7 +39,7 @@ public class Product {
     }
 
     public void priceChange(double change) {
-        this.priceSell = change;
+        this.priceSell += change;
     }
 
     @Override
@@ -55,6 +55,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return NAME+" costs $"+new DecimalFormat("#.00").format(getPriceSell())+". There are "+stock+" left in storage.";
+        return NAME+" costs $"+new DecimalFormat("#.00").format(getPriceSell())+". There are "+stock+" left in stock.";
     }
 }
