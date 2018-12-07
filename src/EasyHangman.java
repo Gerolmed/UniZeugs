@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class EasyHangman {
@@ -20,7 +19,10 @@ public class EasyHangman {
         String message = overwatch.next();
         message = message.toUpperCase();
 
-        //TODO: Filter message somehow
+        for(char c : message.toCharArray()) {
+            if(!checkIsLetter(c))
+                message.replace(c+"", "");
+        }
 
         return message;
     }
@@ -67,6 +69,10 @@ public class EasyHangman {
         setPublicWord();
     }
 
+    private boolean checkIsLetter(char c) {
+        return c >= 'A' && c <= 'Z';
+    }
+
     public void start() {
         init();
 
@@ -85,7 +91,7 @@ public class EasyHangman {
 
             char symb = overwatch.next().toUpperCase().charAt(0);
 
-            if(getSecretWord().contains(symb + "")) {
+            if(checkLetterExists(symb)) {
                 updatePublicWord(symb);
                 System.out.println("Correct! Keep it up.");
             } else {
@@ -105,6 +111,10 @@ public class EasyHangman {
             }
         }
 
+    }
+
+    public boolean checkLetterExists(char symb) {
+        return symb>='A' && symb <= 'Z';
     }
 
     public static void main(String[] args) {
