@@ -14,14 +14,14 @@ public class EasyHangman {
     }
 
     public String readInSecretWord() {
-        System.out.println("Insert your secret word (at least 5 characters): Hallo Welt");
+        System.out.println("Insert your secret word (at least 5 characters):");
 
-        String message = overwatch.next();
+        String message = overwatch.nextLine();
         message = message.toUpperCase();
 
         for(char c : message.toCharArray()) {
             if(!checkIsLetter(c))
-                message.replace(c+"", "");
+                message = message.replace(c+"", "");
         }
 
         return message;
@@ -30,7 +30,7 @@ public class EasyHangman {
     public void init() {
         String msg = "";
 
-        while(msg.length() <= 5) {
+        while(msg.length() < 5) {
             msg = readInSecretWord();
         }
 
@@ -89,7 +89,7 @@ public class EasyHangman {
             System.out.println(getPublicWord());
             System.out.println("Input character:");
 
-            char symb = overwatch.next().toUpperCase().charAt(0);
+            char symb = overwatch.nextLine().toUpperCase().charAt(0);
 
             if(checkLetterExists(symb)) {
                 updatePublicWord(symb);
@@ -111,10 +111,12 @@ public class EasyHangman {
             }
         }
 
+        overwatch.close();
+
     }
 
     public boolean checkLetterExists(char symb) {
-        return symb>='A' && symb <= 'Z';
+        return getSecretWord().contains((symb+"").toUpperCase());
     }
 
     public static void main(String[] args) {
