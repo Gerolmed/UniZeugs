@@ -24,8 +24,14 @@ public class CharWithinBounds {
     }
 
     public static boolean charWithinBounds(char chr, String str) {
-        char minChar = minChar(str);
-        char maxChar = maxChar(str);
+
+        if(str.length() == 0)
+            return false;
+
+        char minChar = minChar(str.toUpperCase());
+        char maxChar = maxChar(str.toUpperCase());
+
+        chr = (chr + "").toUpperCase().charAt(0);
 
         return (chr >= minChar) && (chr <= maxChar);
     }
