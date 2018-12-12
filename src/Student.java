@@ -8,7 +8,7 @@ public class Student extends Person implements Mailable {
     }
 
     @Override
-    public String getEmailAddress() {
+    public String getMailAddress() {
         return String.format("%s.%s@stud.uni-fictitious.de", getFirstName(), getSurName());
     }
 
