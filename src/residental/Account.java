@@ -1,4 +1,4 @@
-package residential;
+package residental;
 
 public class Account {
     private String name;
