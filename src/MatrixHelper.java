@@ -115,11 +115,11 @@ public class MatrixHelper {
         if(!isMatrix(matrix1) || !isMatrix(matrix2))
             return null;
 
-        //Matrices need right format row count of m1 needs to equal column count of m2 or vice versa.
-        if(matrix1[0].length != matrix2[0].length)
+        //Matrices need right format row count of m2 needs to equal column count of m1.
+        if(matrix1[0].length != matrix2.length)
             return null;
 
-        int[][] matrix = createMatrix(matrix1.length, matrix1[0].length);
+        int[][] matrix = createMatrix(matrix1.length, matrix2[0].length);
 
         //Calculate (note: not using x and y here to prevent confusion)
         for(int i = 0; i < matrix1.length; i++) {
