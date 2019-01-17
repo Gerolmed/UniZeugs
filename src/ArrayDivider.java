@@ -12,7 +12,9 @@ public class ArrayDivider {
 
         try {
 
-            for(int i = lowerLimit; i <= upperLimit; i++)
+
+            //Question would actually require <=
+            for(int i = lowerLimit; i < upperLimit; i++)
                 numbers[i] = numbers[i]/divisor;
 
             System.out.println("Division was successful.");
